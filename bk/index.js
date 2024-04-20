@@ -1,9 +1,13 @@
 const express = require("express");
 const cors = require("cors");
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 const port = 3001;
 var app = express();
-app.use(cors("https://master.dl4z4kbrt706t.amplifyapp.com"));
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
