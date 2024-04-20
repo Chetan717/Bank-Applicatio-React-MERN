@@ -5,7 +5,7 @@ const port = 3001;
 
 var app = express();
 app.use(express.json());
-app.use(cors("https://bankweb-five.vercel.app"));
+app.use(cors("https://master.dl4z4kbrt706t.amplifyapp.com"));
 
 let Account = require("./account");
 
@@ -98,20 +98,16 @@ app.put("/account/deposit/:accountNumber", (req, res) => {
               res.json({ type: "success", data: account });
             })
             .catch((err) => {
-              res
-                .status(400)
-                .send({
-                  type: "danger",
-                  message: "unable to update the database",
-                });
+              res.status(400).send({
+                type: "danger",
+                message: "unable to update the database",
+              });
             });
         } else {
-          res
-            .status(400)
-            .send({
-              type: "danger",
-              message: "Deposite amount should be more than $1",
-            });
+          res.status(400).send({
+            type: "danger",
+            message: "Deposite amount should be more than $1",
+          });
         }
       }
     }
@@ -141,12 +137,10 @@ app.put("/account/withdraw/:accountNumber", (req, res) => {
               res.json({ type: "success", data: account });
             })
             .catch((err) => {
-              res
-                .status(400)
-                .send({
-                  type: "danger",
-                  message: "unable to update the database",
-                });
+              res.status(400).send({
+                type: "danger",
+                message: "unable to update the database",
+              });
             });
         } else {
           res
