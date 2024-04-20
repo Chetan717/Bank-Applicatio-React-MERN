@@ -3,10 +3,10 @@ const cors = require("cors");
 const bodyParser = require("body-parser")
 const port = 3001;
 var app = express();
-app.use(express.json());
-app.use(bodyParser.json());
 app.use(cors("https://master.dl4z4kbrt706t.amplifyapp.com"));
-
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 let Account = require("./account");
 
 getCount = async () => {
@@ -16,6 +16,7 @@ getCount = async () => {
 
 // Defined store route
 app.post("/account/create", (req, res) => {
+  console.log(req?.body);
   if (req.body.balance >= 100) {
     getCount();
     let account = new Account(req.body);

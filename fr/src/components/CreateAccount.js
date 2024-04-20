@@ -17,9 +17,6 @@ class CreateAccount extends React.Component{
         const request = new Request('/account/create', {
           crossDomain:true,
           method: 'POST',  
-          redirect: 'follow',
-          headers: new Headers({'Content-Type': 'application/json'}),
-          credentials: 'same-origin',
           body: JSON.stringify({
             name: this.state.name,
             address: this.state.address,
