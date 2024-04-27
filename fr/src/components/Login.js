@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const LoginForm = ({setSahi}) => {
+const LoginForm = ({ setSahi }) => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
 
@@ -9,14 +9,26 @@ const LoginForm = ({setSahi}) => {
     // Here you can perform your login logic, for simplicity, let's just check if the id and password are not empty
     if (id.trim() === "test" && password.trim() === "test123") {
       alert("Login successful!");
+      // Store login details in session storage
+      sessionStorage.setItem("loggedIn", "true");
+      // Optionally, you can store other user data as well
+      sessionStorage.setItem("userId", id);
       setSahi(true);
     } else {
-      alert("Please fill corrrect  both ID and password.");
+      alert("Please fill correct both ID and password.");
     }
   };
 
+  // Function to clear session storage when the window is closed
+  const handleWindowClose = () => {
+    sessionStorage.clear();
+  };
+
+  // Attach event listener to window unload event
+  window.addEventListener("beforeunload", handleWindowClose);
+
   return (
-    <div    style={{
+    <div style={{
         width: "300px",
         height:"100%",
         display: "flex",

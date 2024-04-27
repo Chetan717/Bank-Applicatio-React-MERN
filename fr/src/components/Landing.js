@@ -4,7 +4,18 @@ import LoginForm from "./Login";
 
 const Landing = () => {
   const [sahi, setSahi] = useState(false)
+  const handleLogin = () => {
+    // Check if user is logged in
+    const loggedIn = sessionStorage.getItem("loggedIn") === "true";
+    if (loggedIn) {
+      setSahi(true); // Update state to show authenticated content
+    }
+  };
 
+  // Call handleLogin when component mounts
+  React.useEffect(() => {
+    handleLogin();
+  }, [sahi]);
   return (
     <>
       {sahi === false ? (
