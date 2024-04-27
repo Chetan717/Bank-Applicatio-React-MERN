@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route } from "react-router-dom";
+import LoginForm from "./Login";
 
-class Landing extends React.Component {
-  render() {
-    return (
-      <>
+const Landing = () => {
+  const [sahi, setSahi] = useState(false)
+
+  return (
+    <>
+      {sahi === false ? (
+        <LoginForm setSahi={setSahi} />
+      ) : (
         <div className="container landing">
           <div className="col-sm-8 col-sm-offset-2">
             <div className="row">
@@ -86,11 +91,11 @@ class Landing extends React.Component {
                 />
               </div>
             </div>
-          </div>
         </div>
-      </>
-    );
-  }
-}
+        </div>
+      )}
+    </>
+  );
+};
 
 export default Landing;
