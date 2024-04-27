@@ -5,7 +5,7 @@ const port = 3001;
 var app = express();
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://bankweb-five.vercel.app"],
   })
 );
 app.use(express.json());
@@ -78,6 +78,11 @@ app.get("/account/transations/:accountNumber", (req, res) => {
       res.json(account[0].transations);
     }
   );
+});
+app.get("/", (req, res) => {
+  res.status(200).send({
+    message: "We ARE LIVE",
+  });
 });
 
 app.put("/account/deposit/:accountNumber", (req, res) => {
