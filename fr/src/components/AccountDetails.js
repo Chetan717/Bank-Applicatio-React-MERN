@@ -8,7 +8,7 @@ class AccountDetails extends React.Component{
 
     getDtails = () => {
     
-        const request = new Request('/account/' + this.state.accountNumber , {
+        const request = new Request('https://bankserver.vercel.app/account/' + this.state.accountNumber , {
             method: 'GET',  
             crossDomain:true,
             redirect: 'follow',

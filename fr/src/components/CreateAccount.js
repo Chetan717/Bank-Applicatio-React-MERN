@@ -14,7 +14,7 @@ class CreateAccount extends React.Component{
 
     onFormSubmit = (event) => {
         event.preventDefault();
-        const request = new Request('/account/create', {
+        const request = new Request('https://bankserver.vercel.app/account/create', {
           crossDomain:true,
           method: 'POST',  
           body: JSON.stringify({

@@ -7,7 +7,7 @@ class Withdraw extends Component {
     state = { accountNumber : "" , withdrawAmount: "", accountInfo: null,  messageData: null }
 
     withdrawFund = () => {
-        const request = new Request('/account/withdraw/' + this.state.accountNumber, {
+        const request = new Request('https://bankserver.vercel.app/account/withdraw/' + this.state.accountNumber, {
             crossDomain:true,
             method: 'PUT',  
             redirect: 'follow',

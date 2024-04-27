@@ -7,7 +7,7 @@ class Transations extends React.Component{
 
     getTransation = () => {
     
-        const request = new Request('/account/transations/' + this.state.accountNumber , {
+        const request = new Request('https://bankserver.vercel.app/account/transations/' + this.state.accountNumber , {
             method: 'GET',  
             crossDomain:true,
             redirect: 'follow',

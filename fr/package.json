@@ -2,7 +2,6 @@
   "name": "account",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://bankserver.vercel.app",
   "dependencies": {
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
