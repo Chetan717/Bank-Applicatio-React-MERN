@@ -21,7 +21,7 @@ class CreateAccount extends React.Component {
       type: this.state.type,
     };
 
-    const request = new Request("http://localhost:3001/account/create", {
+    const request = new Request("https://bankserver.vercel.app/account/create", {
       crossDomain: true,
       method: "POST",
       headers: new Headers({ "Content-Type": "application/json" }),
