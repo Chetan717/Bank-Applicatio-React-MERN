@@ -20,8 +20,7 @@ getCount = async () => {
 
 // Defined store route
 app.post("/account/create", (req, res) => {
-  console.log(req?.body);
-  if (req.body.balance >= 100) {
+  if (req.body.balance) {
     getCount();
     let account = new Account(req.body);
 
