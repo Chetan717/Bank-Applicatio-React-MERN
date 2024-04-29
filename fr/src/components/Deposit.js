@@ -7,16 +7,20 @@ class Deposit extends Component {
     state = { accountNumber : "" , depositAmount: "", accountInfo: null, messageData: null }
 
     depositFund = () => {
-        const request = new Request('https://bankserver.vercel.app/account/deposit/' + this.state.accountNumber, {
-            crossDomain:true,
-            method: 'PUT',  
-            redirect: 'follow',
-            headers: new Headers({'Content-Type': 'application/json'}),
-            credentials: 'same-origin',
+        const request = new Request(
+          "https://bankserver.vercel.app/account/deposit/" +
+            this.state.accountNumber,
+          {
+            crossDomain: true,
+            method: "PUT",
+            redirect: "follow",
+            headers: new Headers({ "Content-Type": "application/json" }),
+            credentials: "same-origin",
             body: JSON.stringify({
-                'amount': this.state.depositAmount
-            })
-          });
+              amount: this.state.depositAmount,
+            }),
+          }
+        );
     
           fetch(request)
             .then(response => { return response.json(); })

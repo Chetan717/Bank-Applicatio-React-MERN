@@ -20,41 +20,41 @@ getCount = async () => {
 
 // Defined store route
 app.post("/account/create", (req, res) => {
-  // if (req.body.balance) {
-  getCount();
-  let account = new Account(req.body);
+  if (req.body.balance >= 100) {
+    getCount();
+    let account = new Account(req.body);
 
-  getCount().then((count) => {
-    account.accountNumber = 200 + count;
-    account.transations.push({
-      transationType: "Initial Deposit",
-      amount: account.balance,
-      date: new Date().toLocaleString(),
-    });
-    account.date = new Date().toLocaleString();
-    account.lasttransation = new Date().toLocaleString();
-    account
-      .save()
-      .then((account) => {
-        res.status(200).json({
-          type: "success",
-          message:
-            "Account is created successfully. Your Account Number is " +
-            account.accountNumber,
-        });
-      })
-      .catch((err) => {
-        res
-          .status(400)
-          .send({ type: "danger", message: "Unable to save to database" });
+    getCount().then((count) => {
+      account.accountNumber = 200 + count;
+      account.transations.push({
+        transationType: "Initial Deposit",
+        amount: account.balance,
+        date: new Date().toLocaleString(),
       });
-  });
-  // } else {
-  //   res.status(400).send({
-  //     type: "danger",
-  //     message: "Initial deposit should be $100 or more",
-  //   });
-  // }
+      account.date = new Date().toLocaleString();
+      account.lasttransation = new Date().toLocaleString();
+      account
+        .save()
+        .then((account) => {
+          res.status(200).json({
+            type: "success",
+            message:
+              "Account is created successfully. Your Account Number is " +
+              account.accountNumber,
+          });
+        })
+        .catch((err) => {
+          res
+            .status(400)
+            .send({ type: "danger", message: "Unable to save to database" });
+        });
+    });
+  } else {
+    res.status(400).send({
+      type: "danger",
+      message: "Initial deposit should be $100 or more",
+    });
+  }
 });
 
 app.get("/account/:accountNumber", (req, res) => {
