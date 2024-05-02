@@ -84,7 +84,7 @@ class Deposit extends Component {
               <span class="navbar-toggler-icon"></span>
             </button>
           </nav>
-      <div className="container">
+      <div className="container bg-white">
         <div className="col-md-offset-1 col-md-10">
           <h2>Deposit from account</h2>
           <div className="form-group">

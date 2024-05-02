@@ -84,7 +84,7 @@ class Withdraw extends Component {
           </button>
         </nav>
 
-        <div className="container">
+        <div className="container bg-white">
           <div className="col-md-offset-1 col-md-10">
             <h2>Withdraw from account</h2>
             <div className="form-group">

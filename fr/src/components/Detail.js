@@ -49,7 +49,7 @@ class Detail extends Component {
             <span class="navbar-toggler-icon"></span>
           </button>
         </nav>
-        <div className="detail">
+        <div className="detail ">
           <div className="row">
             <div className="col-sm-4">
               <label>Account Number:</label>

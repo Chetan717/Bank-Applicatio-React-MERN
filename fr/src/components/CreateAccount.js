@@ -93,8 +93,8 @@ class CreateAccount extends React.Component {
             <span class="navbar-toggler-icon"></span>
           </button>
         </nav>
-      <div className="container">
-        <div className="col-md-offset-3 col-md-6">
+      <div className="container bg-white">
+        <div className="col-md-offset-3 col-md-6 bg-white">
           <h2>Create New Account</h2>
           <form onSubmit={this.onFormSubmit}>
             <div className="form-group">

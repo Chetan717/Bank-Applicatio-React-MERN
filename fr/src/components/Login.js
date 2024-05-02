@@ -31,12 +31,13 @@ const LoginForm = ({ setSahi }) => {
     <div style={{
         width: "300px",
         height:"100%",
+       
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         alignContent: "center"
       }} className="container">
-      <div className="col-md-offset-1 col-md-10">
+      <div className="col-md-offset-1 col-md-10 ">
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
