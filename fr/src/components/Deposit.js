@@ -66,6 +66,24 @@ class Deposit extends Component {
     }
 
     return (
+      <>
+      
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <a class="navbar-brand" href="#">
+              <h1 class="fw-bold text-white">EASYBANK</h1>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </nav>
       <div className="container">
         <div className="col-md-offset-1 col-md-10">
           <h2>Deposit from account</h2>
@@ -120,6 +138,7 @@ class Deposit extends Component {
           {detailHtml}
         </div>
       </div>
+      </>
     );
   }
 }

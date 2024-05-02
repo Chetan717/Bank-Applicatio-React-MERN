@@ -21,13 +21,16 @@ class CreateAccount extends React.Component {
       type: this.state.type,
     };
 
-    const request = new Request("https://bankserver.vercel.app/account/create", {
-      crossDomain: true,
-      method: "POST",
-      headers: new Headers({ "Content-Type": "application/json" }),
-      credentials: "same-origin",
-      body: JSON.stringify(formData),
-    });
+    const request = new Request(
+      "https://bankserver.vercel.app/account/create",
+      {
+        crossDomain: true,
+        method: "POST",
+        headers: new Headers({ "Content-Type": "application/json" }),
+        credentials: "same-origin",
+        body: JSON.stringify(formData),
+      }
+    );
 
     fetch(request)
       .then((response) => {
@@ -73,6 +76,23 @@ class CreateAccount extends React.Component {
     }
 
     return (
+      <>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+          <a class="navbar-brand" href="#">
+            <h1 class="fw-bold text-white">EASYBANK</h1>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
       <div className="container">
         <div className="col-md-offset-3 col-md-6">
           <h2>Create New Account</h2>
@@ -158,6 +178,7 @@ class CreateAccount extends React.Component {
           {accountDetails}
         </div>
       </div>
+      </>
     );
   }
 }
