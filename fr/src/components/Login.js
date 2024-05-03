@@ -59,7 +59,7 @@ const LoginForm = ({ setSahi }) => {
               className="form-control"
               style={{ width: "300px" }}
               id="password"
-              placeholder="Initial Deposit"
+              placeholder="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
