@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://chaitanyachau:Event717@cluster0.xoi0z3b.mongodb.net/loan?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://shivanighorpade2203:n1uW163xia35tXLC@cluster0.npvff3h.mongodb.net/loan?retryWrites=true&w=majority')
     .then(() => console.log("Connected to MCC database"))
     .catch(err => console.log(err));
 
