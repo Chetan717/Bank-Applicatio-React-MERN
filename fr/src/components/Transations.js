@@ -46,7 +46,7 @@ class Transations extends React.Component {
               }
             >
               {" "}
-              ${tran.amount}{" "}
+              ₹{tran.amount}{" "}
             </td>
             <td> {this.getFormatedDate(tran.date)}</td>
           </tr>

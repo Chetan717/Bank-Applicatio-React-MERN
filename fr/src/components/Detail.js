@@ -20,7 +20,7 @@ class Detail extends Component {
             }
           >
             {" "}
-            ${tran.amount}{" "}
+            ₹{tran.amount}{" "}
           </td>
           <td> {this.getFormatedDate(tran.date)}</td>
         </tr>
@@ -96,7 +96,7 @@ class Detail extends Component {
             </div>
             <div className="col-sm-8">
               <span>
-                <b>${this.props.accountInfo.balance}</b>
+                <b>₹{this.props.accountInfo.balance}</b>
               </span>
             </div>
           </div>

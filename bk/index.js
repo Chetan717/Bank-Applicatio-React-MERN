@@ -52,7 +52,7 @@ app.post("/account/create", (req, res) => {
   } else {
     res.status(400).send({
       type: "danger",
-      message: "Initial deposit should be $100 or more",
+      message: "Initial deposit should be ₹100 or more",
     });
   }
 });
@@ -115,7 +115,7 @@ app.put("/account/deposit/:accountNumber", (req, res) => {
         } else {
           res.status(400).send({
             type: "danger",
-            message: "Deposite amount should be more than $1",
+            message: "Deposite amount should be more than ₹1",
           });
         }
       }
@@ -162,5 +162,5 @@ app.put("/account/withdraw/:accountNumber", (req, res) => {
 });
 
 app.listen(port, () =>
-  console.log(`Account Services listening on port ${port}!`)
+  console.log(`Account Services listening on port ₹{port}!`)
 );
